@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lako.do - Sharing web and data science packages">
+    <meta name="keywords" content="Lako.do, web development, data science, Python packages, Angular">
+    <meta name="author" content="Joris GUERRY">
+    <title>Lako.do - Web & Data Science Packages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #34495e;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            display: inline-block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #1abc9c;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        main h2 {
+            color: #2c3e50;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .package-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .package {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: calc(33.333% - 40px);
+            box-sizing: border-box;
+        }
+        .package h3 {
+            margin-top: 0;
+            color: #e67e22;
+        }
+        @media (max-width: 768px) {
+            .package {
+                width: calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .package {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Lako.do</h1>
+        <p>Sharing web and data science packages</p>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <section id="home">
+            <h2>Welcome to Lako.do</h2>
+            <p>We provide a wide range of web and data science packages with a strong focus on Python.</p>
+        </section>
+
+        <section id="packages" class="package-list">
+            <div class="package">
+                <h3>stuff-saver</h3>
+                <p>Just cache stuff with pickle or any load/dump backend you want.</p>
+            </div>
+            <!-- Add more packages as needed -->
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Lako.do is a community-driven organization dedicated to providing high-quality, easy-to-use packages for web development and data science enthusiasts. Our focus is primarily on Python, the most popular programming language for data science and web development.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please email me at <a href="mailto:j@9h.gg">j@9h.gg</a>.</p>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Lako.do - All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>
