@@ -12,178 +12,70 @@
       content="Lako.do, web development, data science, Python packages, Angular"
     />
     <meta name="author" content="Joris GUERRY" />
-    <title>Lako.do - Web & Data Science Packages</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-      }
-      header {
-        background-color: #2c3e50;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-      }
-      header h1 {
-        margin: 0;
-      }
-      nav {
-        background-color: #34495e;
-        overflow: hidden;
-      }
-      nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-      nav ul li {
-        display: inline;
-      }
-      nav ul li a {
-        display: inline-block;
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-      }
-      nav ul li a:hover {
-        background-color: #1abc9c;
-      }
-      main {
-        padding: 20px;
-        text-align: center;
-      }
-      main h2 {
-        color: #2c3e50;
-      }
-      footer {
-        background-color: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      .package-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      .package {
-        background-color: white;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 15px;
-        width: calc(33.333% - 40px);
-        box-sizing: border-box;
-      }
-      .package h3 {
-        margin-top: 0;
-        color: #e67e22;
-      }
-      @media (max-width: 768px) {
-        .package {
-          width: calc(50% - 40px);
-        }
-      }
-      @media (max-width: 480px) {
-        .package {
-          width: 100%;
-        }
-      }
-    </style>
+    <title>lako.do - Web & Data Science Packages</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Lako.do</h1>
+  <body class="font-sans bg-gray-100 text-gray-800">
+    <header class="bg-gray-800 text-white py-6 text-center">
+      <div class="container mx-auto">
+        <h1 class="text-3xl">lako.do</h1> 
         <p>Sharing web and data science packages</p>
       </div>
     </header>
 
-    <nav>
-      <div class="container">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <nav class="bg-gray-700">
+      <div class="container mx-auto">
+        <ul class="flex justify-center space-x-4 py-4">
+          <li><a href="#home" class="text-white hover:bg-teal-500 px-4 py-2 rounded">Home</a></li>
+          <li><a href="#packages" class="text-white hover:bg-teal-500 px-4 py-2 rounded">Packages</a></li>
+          <li><a href="#about" class="text-white hover:bg-teal-500 px-4 py-2 rounded">About</a></li>
+          <li><a href="#contact" class="text-white hover:bg-teal-500 px-4 py-2 rounded">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <main>
-      <div class="container">
-        <section id="home">
-          <h2>Welcome to Lako.do</h2>
-          <p>
-            I share a few web and data science packages with a
-            strong focus on Python.
-          </p>
-        </section>
+    <main class="container mx-auto py-8">
+      <section id="home" class="text-center">
+        <h2 class="text-2xl text-gray-800">Welcome to lako.do</h2>
+        <p class="mt-4">I share a few web and data science packages with a strong focus on Python.</p>
+      </section>
 
-        <section id="packages" class="package-list">
-          <a href="./stuff-saver">
-            <div class="package">
-              <h3>stuff-saver</h3>
-              <p>
-                Just cache stuff with pickle or any load/dump backend you want.
-              </p>
-            </div>
-          </a>
-          <a href="./parc">
-            <div class="package">
-              <h3>parc</h3>
-              <p>
-                A simple model of Earth electric grid.
-              </p>
-            </div>
-          </a>
-          <a href="./curry">
-            <div class="package">
-              <h3>curry</h3>
-              <p>
-                A datascience scheduler. Build blocks out of your python functions and let curry scale it with other blocks. 
-              </p>
-            </div>
-          </a>
-          <!-- Add more packages as needed -->
-        </section>
+      <section id="packages" class="flex flex-wrap justify-center mt-8">
+        <a href="./stuff-saver" class="bg-white border border-gray-300 rounded-lg m-4 p-6 w-full sm:w-1/2 lg:w-1/3">
+          <div class="package">
+            <h3 class="text-xl text-orange-600">stuff-saver</h3>
+            <p class="mt-2">Just cache stuff with pickle or any load/dump backend you want.</p>
+          </div>
+        </a>
+        <a href="./parc" class="bg-white border border-gray-300 rounded-lg m-4 p-6 w-full sm:w-1/2 lg:w-1/3">
+          <div class="package">
+            <h3 class="text-xl text-orange-600">parc</h3>
+            <p class="mt-2">A simple model of Earth electric grid.</p>
+          </div>
+        </a>
+        <a href="./curry" class="bg-white border border-gray-300 rounded-lg m-4 p-6 w-full sm:w-1/2 lg:w-1/3">
+          <div class="package">
+            <h3 class="text-xl text-orange-600">curry</h3>
+            <p class="mt-2">A datascience scheduler. Build blocks out of your python functions and let curry scale it with other blocks.</p>
+          </div>
+        </a>
+        <!-- Add more packages as needed -->
+      </section>
 
-        <section id="about">
-          <h2>About Us</h2>
-          <p>
-            Lako.do is a team of one dedicated to providing
-            high-quality, easy-to-use packages for web development and data
-            science enthusiasts. My focus is primarily on Python, the most
-            popular programming language for data science and web development. 
-          </p>
-        </section>
+      <section id="about" class="text-center mt-8">
+        <h2 class="text-2xl text-gray-800">About Us</h2>
+        <p class="mt-4">lako.do is a team of one dedicated to providing high-quality, easy-to-use packages for web development and data science enthusiasts. My focus is primarily on Python, the most popular programming language for data science and web development.</p>
+      </section>
 
-        <section id="contact">
-          <h2>Contact Us</h2>
-          <p>
-            For inquiries, please email me at
-            <a href="mailto:j@9h.gg">j@9h.gg</a>.
-          </p>
-        </section>
-      </div>
+      <section id="contact" class="text-center mt-8">
+        <h2 class="text-2xl text-gray-800">Contact Us</h2>
+        <p class="mt-4">For inquiries, please email me at <a href="mailto:j@9h.gg" class="text-teal-500">j@9h.gg</a>.</p>
+      </section>
     </main>
 
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 Lako.do - All Rights Reserved</p>
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <div class="container mx-auto">
+        <p>© 2024 lako.do - All Rights Reserved</p>
       </div>
     </footer>
   </body>
