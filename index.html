@@ -5,78 +5,360 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Lako.do - Sharing web and data science packages"
+      content="lako.do - Open source web and data tooling projects"
     />
     <meta
       name="keywords"
-      content="Lako.do, web development, data science, Python packages, Angular"
+      content="lako.do, python, data science, web development, open source"
     />
     <meta name="author" content="Joris GUERRY" />
-    <title>lako.do - Web & Data Science Packages</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>lako.do | Web & Data Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Space Grotesk", "ui-sans-serif", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        --glow: 0 0 26px rgba(88, 101, 242, 0.5);
+      }
+
+      .aurora {
+        background:
+          radial-gradient(1200px circle at 10% 0%, rgba(56, 189, 248, 0.22), transparent 62%),
+          radial-gradient(950px circle at 88% 8%, rgba(16, 185, 129, 0.2), transparent 55%),
+          radial-gradient(900px circle at 48% 95%, rgba(139, 92, 246, 0.18), transparent 58%),
+          linear-gradient(180deg, #070a12 0%, #080f1f 40%, #091325 100%);
+      }
+
+      html[data-theme="corporate"] .aurora {
+        background:
+          radial-gradient(1200px circle at 10% 0%, rgba(56, 189, 248, 0.18), transparent 62%),
+          radial-gradient(950px circle at 88% 8%, rgba(16, 185, 129, 0.15), transparent 55%),
+          radial-gradient(900px circle at 48% 95%, rgba(99, 102, 241, 0.15), transparent 58%),
+          linear-gradient(180deg, #e8edf4 0%, #e3e9f3 40%, #dde6f3 100%);
+      }
+
+      .grid-overlay {
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+        background-size: 44px 44px;
+        pointer-events: none;
+      }
+
+      html[data-theme="corporate"] .grid-overlay {
+        background-image:
+          linear-gradient(to right, rgba(15, 23, 42, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(10px);
+      }
+
+      html[data-theme="corporate"] .glass {
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(15, 23, 42, 0.12);
+      }
+
+      .neon {
+        text-shadow: var(--glow);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.65s ease, transform 0.65s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .tilt {
+        transform-style: preserve-3d;
+        transition: transform 0.18s ease;
+      }
+
+      .tilt-pop {
+        transform: translateZ(24px);
+      }
+
+      .project-card {
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+      }
+    </style>
+
+    <script>
+      (function setTheme() {
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+        function applyTheme(e) {
+          document.documentElement.setAttribute(
+            "data-theme",
+            e.matches ? "night" : "corporate"
+          );
+        }
+        applyTheme(prefersDark);
+        prefersDark.addEventListener("change", applyTheme);
+      })();
+    </script>
   </head>
-  <body class="font-sans bg-gray-100 text-gray-800">
-    <header class="bg-gray-800 text-white py-6 text-center">
-      <div class="container mx-auto">
-        <h1 class="text-3xl">lako.do</h1> 
-        <p>Sharing web and data science packages</p>
-      </div>
-    </header>
 
-    <nav class="bg-gray-700">
-      <div class="container mx-auto">
-        <ul class="flex justify-center space-x-4 py-4">
-          <li><a href="#home" class="text-white hover:bg-teal-500 px-4 py-2 rounded">Home</a></li>
-          <li><a href="#packages" class="text-white hover:bg-teal-500 px-4 py-2 rounded">Packages</a></li>
-          <li><a href="#about" class="text-white hover:bg-teal-500 px-4 py-2 rounded">About</a></li>
-          <li><a href="#contact" class="text-white hover:bg-teal-500 px-4 py-2 rounded">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <body class="aurora min-h-screen text-base-content font-display">
+    <div class="grid-overlay fixed inset-0 opacity-60"></div>
 
-    <main class="container mx-auto py-8">
-      <section id="home" class="text-center">
-        <h2 class="text-2xl text-gray-800">Welcome to lako.do</h2>
-        <p class="mt-4">I share a few web and data science packages with a strong focus on Python.</p>
-      </section>
-
-      <section id="packages" class="flex flex-wrap justify-center mt-8">
-        <a href="./stuff-saver" class="bg-white border border-gray-300 rounded-lg m-4 p-6 w-full sm:w-1/2 lg:w-1/3">
-          <div class="package">
-            <h3 class="text-xl text-orange-600">stuff-saver</h3>
-            <p class="mt-2">Just cache stuff with pickle or any load/dump backend you want.</p>
+    <div class="relative z-10">
+      <header class="mx-auto w-full max-w-6xl px-5 pt-6 md:px-8">
+        <nav class="glass rounded-2xl px-4 py-3 shadow-xl">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
+              <span class="text-sm font-medium tracking-widest opacity-80">LAKO.DO</span>
+            </div>
+            <div class="hidden gap-6 text-sm md:flex">
+              <a href="#projects" class="link link-hover">Projects</a>
+              <a href="#about" class="link link-hover">About</a>
+              <a href="#contact" class="link link-hover">Contact</a>
+              <a
+                href="https://9h.gg"
+                class="link link-hover"
+                target="_blank"
+                rel="noopener noreferrer"
+                >9h.gg</a
+              >
+              <a
+                href="https://linkedin.com/in/jorisguerry"
+                class="link link-hover"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </div>
           </div>
-        </a>
-        <a href="./parc" class="bg-white border border-gray-300 rounded-lg m-4 p-6 w-full sm:w-1/2 lg:w-1/3">
-          <div class="package">
-            <h3 class="text-xl text-orange-600">parc</h3>
-            <p class="mt-2">A simple model of Earth electric grid.</p>
+        </nav>
+      </header>
+
+      <main class="mx-auto w-full max-w-6xl px-5 pb-14 pt-10 md:px-8 md:pt-14">
+        <section class="grid items-center gap-8 lg:grid-cols-2">
+          <div class="reveal">
+            <div class="badge badge-primary badge-outline mb-4">Open source lab</div>
+            <h1 class="neon text-5xl font-bold leading-none md:text-7xl">lako.do</h1>
+            <p class="mt-5 max-w-xl text-lg opacity-90">
+              Practical web and data science tools, built for clarity, speed,
+              and daily developer usefulness.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#projects" class="btn btn-primary">See projects</a>
+              <a href="mailto:j@9h.gg" class="btn btn-outline">Contact</a>
+            </div>
           </div>
-        </a>
-        <a href="./curry" class="bg-white border border-gray-300 rounded-lg m-4 p-6 w-full sm:w-1/2 lg:w-1/3">
-          <div class="package">
-            <h3 class="text-xl text-orange-600">curry</h3>
-            <p class="mt-2">A datascience scheduler. Build blocks out of your python functions and let curry scale it with other blocks.</p>
+
+          <div class="reveal">
+            <div id="statusCard" class="tilt glass rounded-3xl p-6 shadow-2xl">
+              <div class="tilt-pop">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm opacity-80">Current focus</p>
+                  <span class="badge badge-success badge-outline">Active</span>
+                </div>
+                <h2 class="mt-4 text-2xl font-semibold">Build useful tools, then polish hard.</h2>
+                <p class="mt-3 opacity-80">
+                  Libraries for data workflows, grid modeling, and codebase analysis with
+                  practical documentation and clean APIs.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="badge badge-outline">Python</span>
+                  <span class="badge badge-outline">CLI</span>
+                  <span class="badge badge-outline">Data</span>
+                  <span class="badge badge-outline">DX</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </a>
-        <!-- Add more packages as needed -->
-      </section>
+        </section>
 
-      <section id="about" class="text-center mt-8">
-        <h2 class="text-2xl text-gray-800">About Us</h2>
-        <p class="mt-4">lako.do is a team of one dedicated to providing high-quality, easy-to-use packages for web development and data science enthusiasts. My focus is primarily on Python, the most popular programming language for data science and web development.</p>
-      </section>
+        <section id="projects" class="mt-14 reveal">
+          <div class="mb-5 flex items-center justify-between">
+            <h2 class="text-3xl font-bold md:text-4xl">Projects</h2>
+            <span class="badge badge-neutral">Independent projects</span>
+          </div>
 
-      <section id="contact" class="text-center mt-8">
-        <h2 class="text-2xl text-gray-800">Contact Us</h2>
-        <p class="mt-4">For inquiries, please email me at <a href="mailto:j@9h.gg" class="text-teal-500">j@9h.gg</a>.</p>
-      </section>
-    </main>
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <article class="project-card glass rounded-3xl p-6 shadow-xl">
+              <h3 class="text-3xl font-bold">stuff-saver</h3>
+              <p class="mt-3 text-base opacity-85">
+                Just save stuffs.  Cache values with pickle or custom load/dump backends in a tiny API.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="badge badge-outline">Python</span>
+                <div class="flex gap-2">
+                  <a href="./stuff-saver" class="btn btn-sm btn-ghost">Project</a>
+                  <a
+                    href="https://github.com/lakodo/stuff-saver"
+                    class="btn btn-sm btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
 
-    <footer class="bg-gray-800 text-white text-center py-4">
-      <div class="container mx-auto">
-        <p>© 2024 lako.do - All Rights Reserved</p>
-      </div>
-    </footer>
+            <article class="project-card glass rounded-3xl p-6 shadow-xl">
+              <h3 class="text-3xl font-bold">parc</h3>
+              <p class="mt-3 text-base opacity-85">
+                A model of Earth electric grid, from France to Japan, from nuclear plant to solar panel farms, from average power per site up to pressure in a pipe.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="badge badge-outline">Data</span>
+                <div class="flex gap-2">
+                  <a href="./parc" class="btn btn-sm btn-ghost">Project</a>
+                  <a
+                    href="https://github.com/lakodo/parc"
+                    class="btn btn-sm btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card glass rounded-3xl p-6 shadow-xl">
+              <h3 class="text-3xl font-bold">curry</h3>
+              <p class="mt-3 text-base opacity-85">
+                Wrap Dask scheduler to make it easy to build datascience flow, compose Python function blocks into scalable data pipelines.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="badge badge-outline">Workflow</span>
+                <div class="flex gap-2">
+                  <a href="./curry" class="btn btn-sm btn-ghost">Project</a>
+                  <a
+                    href="https://github.com/lakodo/curry"
+                    class="btn btn-sm btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card glass rounded-3xl p-6 shadow-xl">
+              <h3 class="text-3xl font-bold">arboribus</h3>
+              <p class="mt-3 text-base opacity-85">
+                Sync folders to split, merge, and partially share monorepos.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="badge badge-outline">CLI</span>
+                <div class="flex gap-2">
+                  <a href="./arboribus" class="btn btn-sm btn-ghost">Project</a>
+                  <a
+                    href="https://github.com/lakodo/arboribus"
+                    class="btn btn-sm btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="mt-12 grid gap-6 md:grid-cols-2">
+          <article id="about" class="reveal glass rounded-3xl p-7 shadow-xl">
+            <h2 class="text-3xl font-bold">About</h2>
+            <p class="mt-4 text-lg opacity-85">
+              lako.do is mostly a side project where I share snippets and small tools
+              with colleagues and friends.
+            </p>
+          </article>
+
+          <article id="contact" class="reveal rounded-3xl bg-primary p-7 text-primary-content shadow-xl">
+            <h2 class="text-3xl font-bold">Contact</h2>
+            <p class="mt-4 text-lg opacity-95">For collaboration or feedback:</p>
+            <a href="mailto:j@9h.gg" class="mt-3 inline-block text-2xl font-semibold underline">
+              j@9h.gg
+            </a>
+            <p class="mt-4 text-sm opacity-90">Personal pages:</p>
+            <a
+              href="https://9h.gg"
+              class="inline-block text-lg font-semibold underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >9h.gg</a
+            >
+            <p class="mt-3 text-sm opacity-90">LinkedIn:</p>
+            <a
+              href="https://linkedin.com/in/jorisguerry"
+              class="inline-block text-lg font-semibold underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >linkedin.com/in/jorisguerry</a
+            >
+          </article>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/20 px-6 py-7 text-center text-sm opacity-80">
+        <p>© 2026 lako.do. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      var reveals = document.querySelectorAll(".reveal");
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+      reveals.forEach(function (el) {
+        observer.observe(el);
+      });
+
+      var statusCard = document.getElementById("statusCard");
+      statusCard.addEventListener("mousemove", function (e) {
+        var rect = statusCard.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        statusCard.style.transform = "rotateY(" + x * 8 + "deg) rotateX(" + -y * 8 + "deg)";
+      });
+      statusCard.addEventListener("mouseleave", function () {
+        statusCard.style.transform = "rotateY(0deg) rotateX(0deg)";
+      });
+    </script>
   </body>
 </html>
