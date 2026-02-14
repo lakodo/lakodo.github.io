@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -45,32 +45,72 @@
 
       .aurora {
         background:
-          radial-gradient(1200px circle at 10% 0%, rgba(56, 189, 248, 0.22), transparent 62%),
-          radial-gradient(950px circle at 88% 8%, rgba(16, 185, 129, 0.2), transparent 55%),
-          radial-gradient(900px circle at 48% 95%, rgba(139, 92, 246, 0.18), transparent 58%),
+          radial-gradient(
+            1200px circle at 10% 0%,
+            rgba(56, 189, 248, 0.22),
+            transparent 62%
+          ),
+          radial-gradient(
+            950px circle at 88% 8%,
+            rgba(16, 185, 129, 0.2),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px circle at 48% 95%,
+            rgba(139, 92, 246, 0.18),
+            transparent 58%
+          ),
           linear-gradient(180deg, #070a12 0%, #080f1f 40%, #091325 100%);
       }
 
       html[data-theme="corporate"] .aurora {
         background:
-          radial-gradient(1200px circle at 10% 0%, rgba(56, 189, 248, 0.18), transparent 62%),
-          radial-gradient(950px circle at 88% 8%, rgba(16, 185, 129, 0.15), transparent 55%),
-          radial-gradient(900px circle at 48% 95%, rgba(99, 102, 241, 0.15), transparent 58%),
+          radial-gradient(
+            1200px circle at 10% 0%,
+            rgba(56, 189, 248, 0.18),
+            transparent 62%
+          ),
+          radial-gradient(
+            950px circle at 88% 8%,
+            rgba(16, 185, 129, 0.15),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px circle at 48% 95%,
+            rgba(99, 102, 241, 0.15),
+            transparent 58%
+          ),
           linear-gradient(180deg, #e8edf4 0%, #e3e9f3 40%, #dde6f3 100%);
       }
 
       .grid-overlay {
         background-image:
-          linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+          linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.055) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.055) 1px,
+            transparent 1px
+          );
         background-size: 44px 44px;
         pointer-events: none;
       }
 
       html[data-theme="corporate"] .grid-overlay {
         background-image:
-          linear-gradient(to right, rgba(15, 23, 42, 0.08) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+          linear-gradient(
+            to right,
+            rgba(15, 23, 42, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(15, 23, 42, 0.08) 1px,
+            transparent 1px
+          );
       }
 
       .laquo-bg {
@@ -97,7 +137,9 @@
         position: absolute;
         left: clamp(0.8rem, 4vw, 2.8rem);
         bottom: clamp(0.8rem, 5vw, 2.4rem);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", monospace;
         font-size: clamp(0.8rem, 1.7vw, 1.05rem);
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -132,7 +174,9 @@
       .reveal {
         opacity: 0;
         transform: translateY(12px);
-        transition: opacity 0.65s ease, transform 0.65s ease;
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
       }
 
       .reveal.is-visible {
@@ -150,7 +194,9 @@
       }
 
       .project-card {
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease;
       }
 
       .project-card:hover {
@@ -164,7 +210,7 @@
         function applyTheme(e) {
           document.documentElement.setAttribute(
             "data-theme",
-            e.matches ? "night" : "corporate"
+            e.matches ? "night" : "corporate",
           );
         }
         applyTheme(prefersDark);
@@ -186,7 +232,9 @@
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
               <div class="h-2.5 w-2.5 rounded-full bg-emerald-400"></div>
-              <span class="text-sm font-medium tracking-widest opacity-80">LAKO.DO</span>
+              <span class="text-sm font-medium tracking-widest opacity-80"
+                >LAKO.DO</span
+              >
             </div>
             <div class="hidden gap-6 text-sm md:flex">
               <a href="#projects" class="link link-hover">Projects</a>
@@ -214,8 +262,12 @@
       <main class="mx-auto w-full max-w-6xl px-5 pb-14 pt-10 md:px-8 md:pt-14">
         <section class="grid items-center gap-8 lg:grid-cols-2">
           <div class="reveal">
-            <div class="badge badge-primary badge-outline mb-4">Open source lab</div>
-            <h1 class="neon text-5xl font-bold leading-none md:text-7xl">lako.do</h1>
+            <div class="badge badge-primary badge-outline mb-4">
+              Open source lab
+            </div>
+            <h1 class="neon text-5xl font-bold leading-none md:text-7xl">
+              lako.do
+            </h1>
             <p class="mt-5 max-w-xl text-lg opacity-90">
               Practical web and data science tools, built for clarity, speed,
               and daily developer usefulness.
@@ -233,10 +285,12 @@
                   <p class="text-sm opacity-80">Current focus</p>
                   <span class="badge badge-success badge-outline">Active</span>
                 </div>
-                <h2 class="mt-4 text-2xl font-semibold">Build useful tools, then polish hard.</h2>
+                <h2 class="mt-4 text-2xl font-semibold">
+                  Build useful tools, then polish hard.
+                </h2>
                 <p class="mt-3 opacity-80">
-                  Libraries for data workflows, grid modeling, and codebase analysis with
-                  practical documentation and clean APIs.
+                  Libraries for data workflows, grid modeling, and codebase
+                  analysis with practical documentation and clean APIs.
                 </p>
                 <div class="mt-5 flex flex-wrap gap-2">
                   <span class="badge badge-outline">Python</span>
@@ -259,12 +313,15 @@
             <article class="project-card glass rounded-3xl p-6 shadow-xl">
               <h3 class="text-3xl font-bold">stuff-saver</h3>
               <p class="mt-3 text-base opacity-85">
-                Just save stuffs.  Cache values with pickle or custom load/dump backends in a tiny API.
+                Just save stuffs. Cache values with pickle or custom load/dump
+                backends in a tiny API.
               </p>
               <div class="mt-5 flex items-center justify-between">
                 <span class="badge badge-outline">Python</span>
                 <div class="flex gap-2">
-                  <a href="./stuff-saver" class="btn btn-sm btn-ghost">Project</a>
+                  <a href="./stuff-saver" class="btn btn-sm btn-ghost"
+                    >Project</a
+                  >
                   <a
                     href="https://github.com/lakodo/stuff-saver"
                     class="btn btn-sm btn-primary"
@@ -279,7 +336,9 @@
             <article class="project-card glass rounded-3xl p-6 shadow-xl">
               <h3 class="text-3xl font-bold">parc</h3>
               <p class="mt-3 text-base opacity-85">
-                A model of Earth electric grid, from France to Japan, from nuclear plant to solar panel farms, from average power per site up to pressure in a pipe.
+                A model of Earth electric grid, from France to Japan, from
+                nuclear plant to solar panel farms, from average power per site
+                up to pressure in a pipe.
               </p>
               <div class="mt-5 flex items-center justify-between">
                 <span class="badge badge-outline">Data</span>
@@ -299,7 +358,8 @@
             <article class="project-card glass rounded-3xl p-6 shadow-xl">
               <h3 class="text-3xl font-bold">curry</h3>
               <p class="mt-3 text-base opacity-85">
-                Wrap Dask scheduler to make it easy to build datascience flow, compose Python function blocks into scalable data pipelines.
+                Wrap Dask scheduler to make it easy to build datascience flow,
+                compose Python function blocks into scalable data pipelines.
               </p>
               <div class="mt-5 flex items-center justify-between">
                 <span class="badge badge-outline">Workflow</span>
@@ -342,15 +402,23 @@
           <article id="about" class="reveal glass rounded-3xl p-7 shadow-xl">
             <h2 class="text-3xl font-bold">About</h2>
             <p class="mt-4 text-lg opacity-85">
-              lako.do is mostly a side project where I share snippets and small tools
-              with colleagues and friends.
+              lako.do is mostly a side project where I share snippets and small
+              tools with colleagues and friends.
             </p>
           </article>
 
-          <article id="contact" class="reveal rounded-3xl bg-primary p-7 text-primary-content shadow-xl">
+          <article
+            id="contact"
+            class="reveal rounded-3xl bg-primary p-7 text-primary-content shadow-xl"
+          >
             <h2 class="text-3xl font-bold">Contact</h2>
-            <p class="mt-4 text-lg opacity-95">For collaboration or feedback:</p>
-            <a href="mailto:j@9h.gg" class="mt-3 inline-block text-2xl font-semibold underline">
+            <p class="mt-4 text-lg opacity-95">
+              For collaboration or feedback:
+            </p>
+            <a
+              href="mailto:j@9h.gg"
+              class="mt-3 inline-block text-2xl font-semibold underline"
+            >
               j@9h.gg
             </a>
             <p class="mt-4 text-sm opacity-90">Personal pages:</p>
@@ -373,7 +441,9 @@
         </section>
       </main>
 
-      <footer class="border-t border-white/20 px-6 py-7 text-center text-sm opacity-80">
+      <footer
+        class="border-t border-white/20 px-6 py-7 text-center text-sm opacity-80"
+      >
         <p>© 2026 lako.do. All rights reserved.</p>
       </footer>
     </div>
@@ -388,7 +458,7 @@
             }
           });
         },
-        { threshold: 0.14 }
+        { threshold: 0.14 },
       );
       reveals.forEach(function (el) {
         observer.observe(el);
@@ -399,7 +469,8 @@
         var rect = statusCard.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
         var y = (e.clientY - rect.top) / rect.height - 0.5;
-        statusCard.style.transform = "rotateY(" + x * 8 + "deg) rotateX(" + -y * 8 + "deg)";
+        statusCard.style.transform =
+          "rotateY(" + x * 8 + "deg) rotateX(" + -y * 8 + "deg)";
       });
       statusCard.addEventListener("mouseleave", function () {
         statusCard.style.transform = "rotateY(0deg) rotateX(0deg)";
