@@ -309,14 +309,16 @@
             <span class="badge badge-neutral">Independent projects</span>
           </div>
 
-          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div
+            class="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]"
+          >
             <article class="project-card glass rounded-3xl p-6 shadow-xl">
               <h3 class="text-3xl font-bold">stuff-saver</h3>
               <p class="mt-3 text-base opacity-85">
                 Just save stuffs. Cache values with pickle or custom load/dump
                 backends in a tiny API.
               </p>
-              <div class="mt-5 flex items-center justify-between">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
                 <span class="badge badge-outline">Python</span>
                 <div class="flex gap-2">
                   <a href="./stuff-saver" class="btn btn-sm btn-ghost"
@@ -340,7 +342,7 @@
                 nuclear plant to solar panel farms, from average power per site
                 up to pressure in a pipe.
               </p>
-              <div class="mt-5 flex items-center justify-between">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
                 <span class="badge badge-outline">Data</span>
                 <div class="flex gap-2">
                   <a href="./parc" class="btn btn-sm btn-ghost">Project</a>
@@ -361,7 +363,7 @@
                 Wrap Dask scheduler to make it easy to build datascience flow,
                 compose Python function blocks into scalable data pipelines.
               </p>
-              <div class="mt-5 flex items-center justify-between">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
                 <span class="badge badge-outline">Workflow</span>
                 <div class="flex gap-2">
                   <a href="./curry" class="btn btn-sm btn-ghost">Project</a>
@@ -381,12 +383,41 @@
               <p class="mt-3 text-base opacity-85">
                 Sync folders to split, merge, and partially share monorepos.
               </p>
-              <div class="mt-5 flex items-center justify-between">
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
                 <span class="badge badge-outline">CLI</span>
                 <div class="flex gap-2">
                   <a href="./arboribus" class="btn btn-sm btn-ghost">Project</a>
                   <a
                     href="https://github.com/lakodo/arboribus"
+                    class="btn btn-sm btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card glass rounded-3xl p-6 shadow-xl">
+              <h3 class="text-3xl font-bold">jean-michel</h3>
+              <p class="mt-2">
+                <span class="badge badge-warning">WIP</span>
+                <span class="ml-2 text-sm font-semibold opacity-85"
+                  >Prototype only: not production-ready, not dev-ready.</span
+                >
+              </p>
+              <p class="mt-3 text-base opacity-85">
+                Experimental async engineering assistant with conversation, MCP
+                integration, and repository-aware automation.
+              </p>
+              <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
+                <span class="badge badge-outline whitespace-nowrap">AI Tool</span>
+                <div class="flex gap-2">
+                  <a href="./jean-michel" class="btn btn-sm btn-ghost"
+                    >Project</a
+                  >
+                  <a
+                    href="https://github.com/lakodo/jean-michel"
                     class="btn btn-sm btn-primary"
                     target="_blank"
                     rel="noopener noreferrer"
